@@ -70,9 +70,9 @@ Debido al tiempo limitado para la realización de la prueba, algunas funcionalid
 
 ## Dependencias principales
 
-- [Vue.js](<https://github.com/jwtk/jjwt](https://vuejs.org/)>) - Un marco accesible, eficaz y versátil para crear interfaces de usuario web.
+- [Vue.js](https://vuejs.org/) - Un marco accesible, eficaz y versátil para crear interfaces de usuario web.
 - [Quasar Framework](https://quasar.dev/) - Material UI para el desarrollo de aplicaciones web y móviles con Vue.js
 - [Pinia](https://es-pinia.vercel.app/) - Administrador de estado avanzado para aplicaciones Vue.js.
-- [Axios](https://modelmapper.org/) - Cliente HTTP basado en promesas para el navegador
+- [Axios](https://axios-http.com/es/) - Cliente HTTP basado en promesas para el navegador
 - [TanStack Query V4](https://tanstack.com/query/latest) - Gestor de estado asíncrono
 - [Vue Router](https://router.vuejs.org/) - Router oficial de Vue.js
