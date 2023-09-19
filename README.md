@@ -56,7 +56,7 @@ Intencionalmente cada llamada a la API tiene una sleep function de 2 s, esto p
 
 Estos son los [composables](https://vue3-spanish.netlify.app/guide/reusability/composables.html#%C2%BFque-es-un-composable) antes mencionados:
 
-- [`usePokemons`](src/composables/usePokemons.js) - Lista todos los pokemons y los que el usuario marque como favoritos.
+- [`usePokemons`](src/composables/usePokemons.js) - Lista todos los pokemons y los que el usuario establezca como favoritos.
 - [`usePokemon`](src/composables/usePokemon.js) - Consulta los detalles del pokemon por su nombre.
 
 ## TODOs (Tareas pendientes)
