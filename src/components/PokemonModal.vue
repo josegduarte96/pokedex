@@ -22,7 +22,7 @@ const toClipboard = () => {
   <q-dialog persistent ref="dialogRef">
     <q-card style="max-width: 570px; width: 100%" class="full-width" v-if="!isLoading" flat bordered>
       <q-img height="260px" fit="cover" src="~assets/modal-banner.svg">
-        <q-img height="180px" class="transparent absolute-center" fit="scale-down" :src="pokeInfo.image" />
+        <q-img height="180px" class="transparent absolute" fit="scale-down" :src="pokeInfo.image" style="top: 25%" />
       </q-img>
       <close-icon @click="onDialogHide" class="absolute cursor-pointer" style="top: 8px; right: 12px" />
       <div class="q-pa-md">

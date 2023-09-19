@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/vue-query"
 import { api } from "src/api"
 import { usePokemonsStore } from "src/stores/pokemons"
-import { computed, watch } from "vue"
+import { computed, watchEffect } from "vue"
 
 const getPokemon = async (name) => {
   await new Promise((resolve) => {
@@ -16,21 +16,19 @@ const usePokemon = (pokemonName) => {
   const { data: pokemonInfo, isLoading } = useQuery(["pokemon", pokemonName], () => getPokemon(pokemonName))
   const pokeInfo = computed(() => store.pokemon)
 
-  watch(
-    () => pokemonInfo.value,
-    (info) => {
-      if (info) {
-        const types = info.types.map(({ type }) => type.name)
-        store.pokemon = {
-          image: info.sprites.other.dream_world.front_default,
-          pokemonName,
-          weight: info.weight,
-          height: info.height,
-          types: types.join(", "),
-        }
+  watchEffect(() => {
+    if (pokemonInfo.value) {
+      const { sprites, weight, height, name, types } = pokemonInfo.value
+      const tipos = types.map(({ type }) => type.name)
+      store.pokemon = {
+        image: sprites.other.dream_world.front_default,
+        pokemonName: name,
+        weight,
+        height,
+        types: tipos.join(", "),
       }
-    },
-  )
+    }
+  })
 
   return {
     pokeInfo,
