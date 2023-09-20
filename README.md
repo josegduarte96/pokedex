@@ -56,7 +56,7 @@ Intencionalmente cada llamada a la API tiene una sleep function de 2 s, esto p
 
 Estos son los [composables](https://vue3-spanish.netlify.app/guide/reusability/composables.html#%C2%BFque-es-un-composable) antes mencionados:
 
-- [`usePokemons`](src/composables/usePokemons.js) - Lista todos los pokemons y los que el usuario marque como favoritos.
+- [`usePokemons`](src/composables/usePokemons.js) - Lista todos los pokemons y los que el usuario establezca como favoritos.
 - [`usePokemon`](src/composables/usePokemon.js) - Consulta los detalles del pokemon por su nombre.
 
 ## TODOs (Tareas pendientes)
@@ -70,9 +70,9 @@ Debido al tiempo limitado para la realización de la prueba, algunas funcionalid
 
 ## Dependencias principales
 
-- [Vue.js](<https://github.com/jwtk/jjwt](https://vuejs.org/)>) - Un marco accesible, eficaz y versátil para crear interfaces de usuario web.
+- [Vue.js](https://vuejs.org/) - Un marco accesible, eficaz y versátil para crear interfaces de usuario web.
 - [Quasar Framework](https://quasar.dev/) - Material UI para el desarrollo de aplicaciones web y móviles con Vue.js
 - [Pinia](https://es-pinia.vercel.app/) - Administrador de estado avanzado para aplicaciones Vue.js.
-- [Axios](https://modelmapper.org/) - Cliente HTTP basado en promesas para el navegador
+- [Axios](https://axios-http.com/es/) - Cliente HTTP basado en promesas para el navegador
 - [TanStack Query V4](https://tanstack.com/query/latest) - Gestor de estado asíncrono
 - [Vue Router](https://router.vuejs.org/) - Router oficial de Vue.js
