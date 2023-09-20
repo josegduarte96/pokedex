@@ -4,7 +4,7 @@ import { usePokemonsStore } from "src/stores/pokemons"
 import { computed, ref, watch } from "vue"
 
 const getPokemons = async () => {
-  await new Promise((resolve) => {
+  await new Promise(resolve => {
     setTimeout(resolve, 2000)
   })
   const { data } = await api.get("pokemon")
@@ -16,19 +16,27 @@ const usePokemons = () => {
   const { data: pokemons, isLoading } = useQuery(["pokemons"], getPokemons)
   const filteredPokemons = ref()
   const pokemonsAll = computed(() => filteredPokemons.value ?? store.pokemons)
-  const pokemonsFavs = computed(() => pokemonsAll.value.filter((poke) => poke.isFavorite))
+  const pokemonsFavs = computed(() =>
+    pokemonsAll.value.filter(poke => poke.isFavorite)
+  )
 
   watch(
     () => pokemons.value,
-    (pokemons) => {
+    pokemons => {
       if (pokemons?.results.length > 0) {
-        store.pokemons = pokemons.results.map((poke) => ({ ...poke, isFavorite: false }))
+        store.pokemons = pokemons.results.map(poke => ({
+          ...poke,
+          isFavorite: false,
+        }))
       }
-    },
+    }
   )
 
-  const filterPokemons = (filter) => {
-    if (filter != "") filteredPokemons.value = store.pokemons.filter(({ name }) => name.includes(filter.toLowerCase()))
+  const filterPokemons = filter => {
+    if (filter != "")
+      filteredPokemons.value = store.pokemons.filter(({ name }) =>
+        name.includes(filter.toLowerCase())
+      )
     else filteredPokemons.value = undefined
   }
 

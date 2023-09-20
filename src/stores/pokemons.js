@@ -9,8 +9,8 @@ export const usePokemonsStore = defineStore("pokemons", () => {
   //Getters
 
   //Actions
-  const setFavorite = (pokemonName) => {
-    pokemons.value.map((poke) => {
+  const setFavorite = pokemonName => {
+    pokemons.value.map(poke => {
       if (poke.name === pokemonName) {
         poke.isFavorite = !poke.isFavorite
       }

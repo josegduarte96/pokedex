@@ -1,29 +1,29 @@
 <script setup>
-defineProps({
-  label: String,
-  to: {
-    type: String,
-    required: false,
-  },
-  color: {
-    type: String,
-    default: "accent",
-  },
-  icon: {
-    type: String,
-    required: false,
-  },
-  size: {
-    type: String,
-    default: "md",
-  },
-  round: {
-    type: Boolean,
-    default: false,
-  },
-})
+  defineProps({
+    label: String,
+    to: {
+      type: String,
+      required: false,
+    },
+    color: {
+      type: String,
+      default: "accent",
+    },
+    icon: {
+      type: String,
+      required: false,
+    },
+    size: {
+      type: String,
+      default: "md",
+    },
+    round: {
+      type: Boolean,
+      default: false,
+    },
+  })
 
-defineEmits(["click"])
+  defineEmits(["click"])
 </script>
 <template>
   <q-btn

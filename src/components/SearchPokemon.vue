@@ -1,8 +1,8 @@
 <script setup>
-import { ref } from "vue"
+  import { ref } from "vue"
 
-defineEmits(["filter"])
-const model = ref("")
+  defineEmits(["filter"])
+  const model = ref("")
 </script>
 <template>
   <q-input
@@ -15,7 +15,9 @@ const model = ref("")
     standout="bg-white"
     input-style="color: black">
     <template #prepend>
-      <q-icon color="dark" name="search" />
+      <q-icon
+        color="dark"
+        name="search" />
     </template>
   </q-input>
 </template>

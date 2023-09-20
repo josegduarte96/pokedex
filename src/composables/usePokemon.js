@@ -3,17 +3,20 @@ import { api } from "src/api"
 import { usePokemonsStore } from "src/stores/pokemons"
 import { computed, watchEffect } from "vue"
 
-const getPokemon = async (name) => {
-  await new Promise((resolve) => {
+const getPokemon = async name => {
+  await new Promise(resolve => {
     setTimeout(resolve, 2000)
   })
   const { data } = await api.get(`pokemon/${name}`)
   return data
 }
 
-const usePokemon = (pokemonName) => {
+const usePokemon = pokemonName => {
   const store = usePokemonsStore()
-  const { data: pokemonInfo, isLoading } = useQuery(["pokemon", pokemonName], () => getPokemon(pokemonName))
+  const { data: pokemonInfo, isLoading } = useQuery(
+    ["pokemon", pokemonName],
+    () => getPokemon(pokemonName)
+  )
   const pokeInfo = computed(() => store.pokemon)
 
   watchEffect(() => {
